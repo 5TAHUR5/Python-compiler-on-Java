@@ -24,8 +24,7 @@ public class Main {
         File bat = new File(pathToFiles + fileName + ".txt");
         bat.createNewFile();
         Formatter formatter2 = new Formatter(pathToFiles + fileName + ".txt");
-        String command =
-                "python  " + pathToFiles + fileName + ".py \n" +
+        String command = "python  " + pathToFiles + fileName + ".py \n" +
                 "exit";
         formatter2.format("%s", command);
         formatter2.close();
@@ -45,19 +44,20 @@ public class Main {
         while (scanner.hasNextLine()) {
             out.append(scanner.nextLine());
         }
+        scanner.close();
         return out.toString();
     }
-
 
     public static String readConsole() throws IOException {
         System.out.println("----------------------------");
         StringBuilder stringBuilder = new StringBuilder();
         while (true) {
             String s = reader.readLine();
-            if (s.equals("stop")) break;
+            if (s.equals("stop"))
+                break;
             stringBuilder.append(s).append("\n");
         }
-        return  stringBuilder.toString();
+        return stringBuilder.toString();
     }
 
     public static void printToConsole(OutputStream out, String s) throws IOException {
@@ -76,5 +76,3 @@ public class Main {
     }
 
 }
-
-
